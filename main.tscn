@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://c4rvfpyuwe06m"]
+
+[ext_resource type="PackedScene" uid="uid://cid4lyxl084gx" path="res://player.tscn" id="1_3o5vn"]
+[ext_resource type="Texture2D" uid="uid://u41le8fupryg" path="res://graphics/Isometric/dirtTiles_E.png" id="1_ggmrw"]
+[ext_resource type="Texture2D" uid="uid://dr6hcooth02lv" path="res://graphics/Isometric/dirtTiles_N.png" id="2_10i56"]
+[ext_resource type="Texture2D" uid="uid://bkj6qyvib5str" path="res://graphics/Isometric/dirtTiles_S.png" id="3_mgh7s"]
+[ext_resource type="Texture2D" uid="uid://k52v6ac7v5nx" path="res://graphics/Isometric/dirtTiles_W.png" id="4_wt83n"]
+[ext_resource type="Texture2D" uid="uid://cksbp03enb46k" path="res://graphics/Isometric/stoneMissingTiles_E.png" id="5_h78oe"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ft6c1"]
+texture = ExtResource("1_ggmrw")
+texture_region_size = Vector2i(256, 128)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 128)
+0:2/size_in_atlas = Vector2i(1, 2)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(0, 54)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlo8w"]
+texture = ExtResource("2_10i56")
+texture_region_size = Vector2i(256, 256)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 54)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7v40d"]
+texture = ExtResource("3_mgh7s")
+texture_region_size = Vector2i(256, 256)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 54)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kkhn"]
+texture = ExtResource("4_wt83n")
+texture_region_size = Vector2i(256, 256)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 54)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2b7rf"]
+texture = ExtResource("5_h78oe")
+texture_region_size = Vector2i(256, 256)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 44)
+
+[sub_resource type="TileSet" id="TileSet_dmjdo"]
+tile_shape = 1
+tile_size = Vector2i(256, 128)
+sources/0 = SubResource("TileSetAtlasSource_ft6c1")
+sources/1 = SubResource("TileSetAtlasSource_mlo8w")
+sources/2 = SubResource("TileSetAtlasSource_7v40d")
+sources/3 = SubResource("TileSetAtlasSource_8kkhn")
+sources/4 = SubResource("TileSetAtlasSource_2b7rf")
+
+[node name="Main" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_dmjdo")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(262143, 1, 1, 262144, 1, 1, 393215, 0, 2, 327679, 1, 1, 262142, 1, 1, 196607, 4, 1, 131071, 4, 1, 131072, 1, 1, 196608, 4, 1, 327678, 1, 1, 393214, 0, 2, 458751, 0, 2, 393216, 0, 2, 327680, 1, 1, 262145, 1, 1, 524287, 0, 2, 589823, 0, 2, 655359, 0, 2, 655360, 0, 2, 589824, 0, 2, 524288, 0, 2, 458752, 0, 2, 393217, 0, 2, 327681, 0, 2, 393218, 0, 2, 458753, 0, 2, 524289, 0, 2, 720895, 0, 2, 655358, 0, 2, 589822, 0, 2, 524286, 0, 2, 458750, 0, 2, 393213, 0, 2, 524285, 0, 2, 458749, 0, 2, -1, 1, 1, 0, 4, 1, 65536, 4, 1, 131073, 4, 1, 1, 4, 1, -65535, 4, 1, -65536, 4, 1, 65538, 1, 1, 196609, 1, 1, 65537, 4, 1, 2, 1, 1, -131071, 4, 1, -65537, 1, 1, -2, 1, 1, 65534, 1, 1, 131070, 1, 1, 65535, 1, 1, -131070, 4, 1, -196607, 4, 1, 131074, 4, 1, 196610, 4, 1)
+
+[node name="player" parent="." instance=ExtResource("1_3o5vn")]
+position = Vector2(17.7109, 134.558)
