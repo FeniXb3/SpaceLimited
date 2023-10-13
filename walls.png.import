@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6jexvmq4hujq"
-path="res://.godot/imported/stoneMissingTiles_W.png-1317058b0b8abf58c89302650d67b5d0.ctex"
+uid="uid://dwr28ckds038b"
+path="res://.godot/imported/walls.png-c04d410442f6ce7c5383ee87e9bcd3a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stoneMissingTiles_W.png"
-dest_files=["res://.godot/imported/stoneMissingTiles_W.png-1317058b0b8abf58c89302650d67b5d0.ctex"]
+source_file="res://walls.png"
+dest_files=["res://.godot/imported/walls.png-c04d410442f6ce7c5383ee87e9bcd3a2.ctex"]
 
 [params]
 
