@@ -43,7 +43,8 @@ func _physics_process(delta):
 		animation_type = "idle"
 	
 	if direction_vector.x != 0 and direction_vector.y != 0:
-		direction_vector = Vector2(1, 0).rotated(deg_to_rad(26.5))*direction_vector.sign()
+		direction_vector = Vector2(256, 128).normalized()*direction_vector.sign()
+#		direction_vector = Vector2(1, 0).rotated(deg_to_rad(26.5))*direction_vector.sign()
 		direction_vector = direction_vector.normalized()
 	
 	var new_animation_name = "%s_%s%s" % [animation_type, vertical_direction, horizontal_direction]
