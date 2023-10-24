@@ -35,6 +35,8 @@ func _physics_process(delta):
 #	else:
 #		velocity.y = move_toward(velocity.y, 0, SPEED)
 	var direction_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	direction_vector = Vector2(direction_vector.x - direction_vector.y, (direction_vector.x + direction_vector.y) / 2)
+
 	if direction_vector.length() > 0:
 		animation_type = "running"
 		horizontal_direction = "W" if direction_vector.x < 0 else "E" if direction_vector.x > 0 else ""
@@ -42,10 +44,11 @@ func _physics_process(delta):
 	else:
 		animation_type = "idle"
 	
-	if direction_vector.x != 0 and direction_vector.y != 0:
-		direction_vector = Vector2(256, 128).normalized()*direction_vector.sign()
-#		direction_vector = Vector2(1, 0).rotated(deg_to_rad(26.5))*direction_vector.sign()
-		direction_vector = direction_vector.normalized()
+#	if direction_vector.x != 0 and direction_vector.y != 0:
+#		direction_vector = Vector2(256, 128).normalized()*direction_vector.sign()
+##		direction_vector = Vector2(1, 0).rotated(deg_to_rad(26.5))*direction_vector.sign()
+#		direction_vector = direction_vector.normalized()
+		
 	
 	var new_animation_name = "%s_%s%s" % [animation_type, vertical_direction, horizontal_direction]
 
